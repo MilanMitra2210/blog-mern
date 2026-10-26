@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+button {
+    cursor: pointer;
+}
+
+/* Design System Modules */
+@import "./styles/variables.css";
+@import "./styles/base.css";
+@import "./styles/components.css";
+@import "./styles/utilities.css";
+
+/* Premium CKEditor 5 CSS Overrides */
+.ck-wrapper {
+  --ck-border-radius: 16px;
+  --ck-color-base-border: transparent; /* Remove internal border, let wrapper handle it */
+  --ck-color-base-background: transparent;
+  --ck-color-focus-border: transparent;
+  --ck-color-shadow: transparent;
+  --ck-spacing-standard: 12px;
+}
+
+/* Ensure a beautiful minimum height and readable content layout */
+.ck.ck-editor__editable_inline {
+  min-height: 220px;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+  color: var(--color-dark-blue) !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Style the top toolbar area with a premium layout */
+.ck.ck-editor__top {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+.ck.ck-toolbar {
+  border: none !important;
+  background: rgba(15, 23, 42, 0.03) !important; /* Soft visible dark-tinted glassy partition */
+  backdrop-filter: blur(8px) !important; /* Correct standard CSS property */
+  padding: 0.5rem 0.75rem !important;
+}
+
+/* Remove default focus indicators to respect our custom border animation */
+.ck.ck-editor__editable.ck-focused {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Customize list styles so they don't lose bullets due to Tailwind's reset */
+.ck-content ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.ck-content ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Make slim scrollbar default globally for all scrollable elements */
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 75, 135, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 75, 135, 0.3);
+}
+
+/* Unified, Theme-Aware Overrides for CKEditor 5 Dropdowns & Panels */
+.ck-body,
+.ck.ck-dropdown__panel {
+  --ck-color-dropdown-panel-background: var(--color-white) !important;
+  --ck-color-list-background: var(--color-white) !important;
+  --ck-color-panel-background: var(--color-white) !important;
+  --ck-color-panel-border: var(--color-gray) !important;
+  --ck-color-base-border: var(--color-gray) !important;
+  --ck-color-text: var(--color-dark-blue) !important;
+  --ck-color-list-button-text: var(--color-dark-blue) !important;
+  --ck-color-list-button-hover-background: var(--color-gray) !important;
+  --ck-color-button-default-text: var(--color-dark-blue) !important;
+  --ck-color-button-default-hover-background: var(--color-gray) !important;
+  --ck-color-button-on-background: var(--color-gray) !important;
+  --ck-color-button-on-text: var(--color-primary) !important;
+  --ck-color-grid-tile-hover-background: rgba(48, 97, 152, 0.15) !important;
+}
+
+/* Scoped Dark Mode Toolbar Details */
+.dark .ck.ck-editor__top {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .ck.ck-toolbar {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.dark .ck.ck-toolbar .ck-button {
+  color: var(--color-dark-blue) !important;
+}
+
+.dark .ck.ck-toolbar .ck-button:hover:not(.ck-disabled) {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .ck.ck-toolbar .ck-button.ck-on {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Dropdown Panel and List Items */
+.ck.ck-dropdown .ck-button.ck-dropdown__button {
+  border-radius: 10px !important;
+  padding: 6px 12px !important;
+  background: var(--color-white) !important;
+  border: 1px solid var(--color-gray) !important;
+  transition: all 0.2s ease !important;
+}
+
+.ck.ck-dropdown .ck-button.ck-dropdown__button:hover {
+  background: var(--color-gray) !important;
+}
+
+.ck.ck-dropdown__panel {
+  border-radius: 14px !important;
+  border: 1px solid var(--color-gray) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08) !important;
+  background: color-mix(in srgb, var(--color-white) 85%, transparent) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  padding: 6px !important;
+  z-index: 10000 !important;
+}
+
+.ck.ck-dropdown__panel * {
+  color: var(--color-dark-blue) !important;
+}
+
+.ck.ck-list__item .ck-button {
+  border-radius: 8px !important;
+  padding: 6px 12px !important;
+  color: var(--color-dark-blue) !important;
+  background: transparent !important;
+  transition: all 0.15s ease !important;
+}
+
+.ck.ck-list__item .ck-button:hover:not(.ck-disabled) {
+  background: var(--color-gray) !important;
+  color: var(--color-primary) !important;
+}
+
+/* Table grid selector overrides */
+.ck.ck-insert-table-dropdown__grid-container {
+  background: color-mix(in srgb, var(--color-white) 85%, transparent) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  padding: 8px !important;
+  border-radius: 10px !important;
+}
+
+.ck.ck-table-grid__cell {
+  border: 1px solid var(--color-gray) !important;
+  background: transparent !important;
+  transition: all 0.15s ease !important;
+}
+
+.ck.ck-table-grid__cell.ck-on {
+  background: rgba(48, 97, 152, 0.25) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.ck.ck-insert-table-dropdown__label {
+  color: var(--color-dark-blue) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+}

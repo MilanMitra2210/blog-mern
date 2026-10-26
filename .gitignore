@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production / build artifacts
+dist/
+*/dist/
+build/
+*/build/
+.next/
+*/.next/
+out/
+*/out/
+coverage/
+*/coverage/
+
+# Environment files
+.env
+*/.env
+.env.local
+*/.env.local
+.env.*.local
+*/.env.*.local
+!.env.example
+!*/.env.example
+
+# Logs
+logs/
+*/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS metadata
+.DS_Store
+*/.DS_Store
+Thumbs.db
+*/Thumbs.db
+
+# Editor configurations
+.vscode/
+*/.vscode/
+.idea/
+*/.idea/
+*.swp
+*.swo
+
+# Temporary uploads / media
+uploads/*
+!uploads/.gitkeep
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Vite cache
+*.timestamp-*
+*/.vite/

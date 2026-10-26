@@ -1,0 +1,17 @@
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray rounded-full hover:bg-dark-blue/20 transition-colors;
+}
+
+/* Glassmorphism utility */
+.glass-effect {
+  @apply bg-white/70 backdrop-blur-lg border border-white/20;
+}

@@ -1,0 +1,44 @@
+@theme {
+  /* Brand Colors */
+  --color-white: #ffffff;
+  --color-pure-white: #ffffff;
+  --color-primary: #306198;
+  --color-primary-dark: #222222;
+  --color-secondary: #298383;
+  --color-light-blue: #f7f3ee;
+  --color-dark-blue: #122549;
+  --color-orange: #ec7f20;
+  --color-green: #3da4a4;
+  --color-gray: #f0f0f0;
+
+  /* Typography */
+  --font-sans: "Inter", "system-ui", "-apple-system", "sans-serif";
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(180deg, var(--color-primary) 0%, var(--color-gray) 100%);
+  --gradient-secondary: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-gray) 100%);
+  --gradient-brand: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  
+  /* Animations */
+  --animate-spin-slow: spin 3s linear infinite;
+}
+
+/* Dark Mode Overrides */
+@layer base {
+  .dark {
+    --color-white: #1a1b1e;
+    --color-primary: #4a90e2;
+    --color-primary-dark: #f0f0f0;
+    --color-secondary: #3db8b8;
+    --color-light-blue: #101113;
+    --color-dark-blue: #e1e6ed;
+    --color-orange: #f39c12;
+    --color-green: #4fd1d1;
+    --color-gray: #2c2e33;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
